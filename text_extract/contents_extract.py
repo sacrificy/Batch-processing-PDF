@@ -144,13 +144,13 @@ def get_contents(path):
     for file in os.listdir(path):
         if file[-4:] == '.pdf':
             doc = fitz.open(os.path.join(path, file))
-            # page_count = doc.pageCount
+            page_count = doc.pageCount
             # print(page_count)
             # print(page_count)
             # print(doc.getToC())
             text = file + '\n'                          #给提取的目录加上文件名称
             # print(text)
-            for i in range(1, 10):
+            for i in range(1, page_count):
                 page = doc.loadPage(i)
                 # print(page)
                 # links=page.getLinks()
@@ -187,7 +187,7 @@ def deal_catalog(path):
     keyword4 = r'\s*图\s*表\s*'
     keyword5 = r'\d*\.\d*'
     keyword6 = r'\s*图\s*目\s*|\s*插\s*图\s*|\s*表\s*目\s*|\s*表\s*格\s*'
-    mkpath = path + '\\' + '研报目录\\'
+    mkpath = path + '\\研报目录\\'
     mkdir(mkpath)
     for file in os.listdir(path):
         if file[-4:] == '.txt':
@@ -226,8 +226,8 @@ def deal_catalog(path):
                 List_2_end = list_head + list2
 
             os.remove(file_name1)              #删除原目录
-            last_file_name = os.path.join(path, '目录-' + file)
-            last_file_name1 = os.path.join(path, '图表目录-' + file)
+            last_file_name = os.path.join(mkpath, '目录-' + file)
+            last_file_name1 = os.path.join(mkpath, '图表目录-' + file)
 
             with open(last_file_name, 'w') as f:
                 f.writelines(list1)
@@ -237,7 +237,7 @@ def deal_catalog(path):
 
 
 if __name__ == '__main__':
-    rootdir = input("Enter your file path:")
+    rootdir = 'E:\\项目\\试运行\\201808'
     deal_dir = classify(rootdir)
     # get_contents(rootdir)
     # deal_catalog(rootdir)

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a9d61dd-e534-4619-830a-918d2aef2828" name="Default" comment="" />
+    <list default="true" id="4a9d61dd-e534-4619-830a-918d2aef2828" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/zhengze.py" beforeDir="false" afterPath="$PROJECT_DIR$/zhengze.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,38 +32,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="contents_extract.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contents_extract.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2963">
-              <caret line="248" selection-start-line="248" selection-end-line="248" />
+            <state relative-caret-position="2653">
+              <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image_extract.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/image_extract.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="text_extract.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/text_extract.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,29 +48,32 @@
       <file leaf-file-name="crack.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zhengze.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhengze.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="100" lean-forward="true" selection-end-line="212" />
+            <state relative-caret-position="115">
+              <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#21#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pymupdf_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pymupdf_test.py">
+      <file leaf-file-name="zhengze.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhengze.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1955">
-              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+            <state relative-caret-position="161">
+              <caret line="153" column="48" lean-forward="true" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_extract.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image_extract.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="211" column="41" lean-forward="true" selection-end-line="212" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +92,12 @@
       <find>path</find>
       <find>page_count</find>
       <find>page_num</find>
+      <find>do_</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,19 +114,22 @@
         <option value="$USER_HOME$/Desktop/perturbation/my_uni_purt.py" />
         <option value="$PROJECT_DIR$/pymupdf_test.py" />
         <option value="$PROJECT_DIR$/pymupdf_test_1.py" />
-        <option value="$PROJECT_DIR$/contents_extract.py" />
         <option value="$PROJECT_DIR$/text_extract.py" />
-        <option value="$PROJECT_DIR$/zhengze.py" />
+        <option value="$PROJECT_DIR$/contents_extract.py" />
         <option value="$PROJECT_DIR$/image_extract.py" />
+        <option value="D:/Applications/Anaconda3/Lib/site-packages/fitz/utils.py" />
+        <option value="$PROJECT_DIR$/crack.py" />
+        <option value="$PROJECT_DIR$/zhengze.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="758" />
-    <option name="y" value="100" />
+    <option name="x" value="949" />
+    <option name="y" value="173" />
     <option name="width" value="975" />
     <option name="height" value="820" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -161,10 +150,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\Batch-processing-PDF\text_extract" />
       <recent name="E:\Mycode_py\text_extract" />
     </key>
   </component>
@@ -180,7 +171,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.zhengze">
+  <component name="RunManager" selected="Python.crack">
     <configuration name="contents_extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="text_extract" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,7 +190,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="do_PCA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="crack" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="text_extract" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -207,17 +198,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/perturbation" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/perturbation/do_PCA.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crack.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="my_uni_purt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="image_extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="text_extract" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,11 +216,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/perturbation" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/perturbation/my_uni_purt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_extract.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -291,19 +282,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.pymupdf_test (1)" />
-      <item itemvalue="Python.do_PCA" />
-      <item itemvalue="Python.my_uni_purt" />
       <item itemvalue="Python.pymupdf_test_1" />
       <item itemvalue="Python.zhengze" />
       <item itemvalue="Python.contents_extract" />
+      <item itemvalue="Python.crack" />
+      <item itemvalue="Python.image_extract" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.crack" />
         <item itemvalue="Python.zhengze" />
+        <item itemvalue="Python.image_extract" />
         <item itemvalue="Python.contents_extract" />
         <item itemvalue="Python.pymupdf_test_1" />
-        <item itemvalue="Python.my_uni_purt" />
-        <item itemvalue="Python.do_PCA" />
       </list>
     </recent_temporary>
   </component>
@@ -318,52 +309,78 @@
       <option name="presentableId" value="Default" />
       <updated>1537403607731</updated>
     </task>
+    <task id="LOCAL-00001" summary="testtesttest">
+      <created>1539175508234</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539175508234</updated>
+    </task>
+    <task id="LOCAL-00002" summary="testtesttest">
+      <created>1539182678821</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539182678821</updated>
+    </task>
+    <task id="LOCAL-00003" summary="testtesttest">
+      <created>1539182689842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539182689842</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="758" y="100" width="975" height="820" extended-state="0" />
+    <frame x="949" y="173" width="975" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18769552" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18769552" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.328125" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32954547" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32765958" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10364583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32925585" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testtesttest" />
+    <option name="LAST_COMMIT_MESSAGE" value="testtesttest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -440,8 +457,8 @@
     <entry file="file://$PROJECT_DIR$/pymupdf_test_1.py" />
     <entry file="file://$PROJECT_DIR$/pymupdf_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        <state relative-caret-position="148">
+          <caret line="79" column="22" lean-forward="true" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -449,16 +466,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image_extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="211" column="41" lean-forward="true" selection-end-line="212" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contents_extract.py">
+    <entry file="file://D:/Applications/Anaconda3/Lib/site-packages/fitz/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2963">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Applications/Anaconda3/Lib/site-packages/fitz/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="780" column="10" selection-start-line="780" selection-start-column="10" selection-end-line="780" selection-end-column="10" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -467,28 +500,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+        <state relative-caret-position="115">
+          <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding>
+            <element signature="e#21#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contents_extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2653">
+          <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhengze.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="100" lean-forward="true" selection-end-line="212" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image_extract.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="153" column="48" lean-forward="true" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
         </state>
       </provider>
     </entry>

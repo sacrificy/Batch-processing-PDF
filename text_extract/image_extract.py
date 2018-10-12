@@ -209,4 +209,4 @@ def image_extract(path):
         continue
 
 
-image_extract("E:\\项目\\试运行\\201808\\有目录")
+image_extract("E:\\项目\\试运行\\201808\\需求1")
