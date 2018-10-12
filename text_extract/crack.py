@@ -8,7 +8,7 @@ from operator import itemgetter
 from itertools import groupby
 import shutil
 
-def Crack(file_path):
+def crack(file_path,out_path):
     """破解并移除"报告吧"水印
     对于可以破解的文件破解并移除水印，处理后存放在file_path下处理完成文件夹
     对于不可破解的文件(如:用户密码)，将文件移动到file_path下未处理完成文件夹
@@ -54,5 +54,5 @@ def Crack(file_path):
 if __name__ == '__main__':
     file_path="D:/PDF/行业深度研究/"
     out_path="D:/PDF/Cracked/"
-    Crack(file_path,out_path)
+    crack(file_path,out_path)
     print()
