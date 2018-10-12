@@ -52,5 +52,7 @@ def Crack(file_path):
 
 
 if __name__ == '__main__':
-    file_path="E:/项目/试运行/行业深度研究"
-    Crack(file_path)
+    file_path="D:/PDF/行业深度研究/"
+    out_path="D:/PDF/Cracked/"
+    Crack(file_path,out_path)
+    print()
