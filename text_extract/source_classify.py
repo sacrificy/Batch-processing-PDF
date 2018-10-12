@@ -34,7 +34,7 @@ def preprocess(path, file):
     '''
     在截取图片之前对数据进行预处理
     :param path: 文件路径, pdf文件
-    :return: 字符串："资料来源：" 或者 "数据来源：" 或者 "来源：" 或者 "未处理完成"
+    :return: 字符串："资料来源" 或者 "数据来源" 或者 "来源" 或者 "未处理完成"
     '''
     materialsource = []
     datasource = []
@@ -69,14 +69,14 @@ def preprocess(path, file):
         doc.close()
         if not flag:
             shutil.copy(os.path.join(path, file), os.path.join(mkpath, file))
-            return "未处理完成："
+            return "未处理完成"
         else:
             if len(materialsource) and not len(source) and not len(datasource):
-                return "资料来源："
+                return "资料来源"
             elif len(datasource) and not len(source) and not len(materialsource):
-                return "数据来源："
+                return "数据来源"
             elif len(source) and not len(datasource) and not len(materialsource):
-                return "来源："
+                return "来源"
             else:
                 shutil.copy(os.path.join(path, file), os.path.join(mkpath, file))
                 return "未处理完成："  

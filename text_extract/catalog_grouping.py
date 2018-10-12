@@ -29,7 +29,6 @@ def catalog_extract(file_name):
             continue
     return result
 
-
 # 参数需要上一个函数处理完之后的目录列表
 def catalog_list_grouping(list):
     dic = {}
@@ -45,10 +44,6 @@ def catalog_list_grouping(list):
             dic[page] = [temp_list[0]]
 
     return dic
-
-
-
-
 
 if __name__ == '__main__':
     file_name = 'D:/Study/工程项目/测试文件/20180803-信达证券-氢能源系列报告之一：产业化迎来真实导入期.pdf'

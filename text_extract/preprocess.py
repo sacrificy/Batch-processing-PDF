@@ -30,7 +30,7 @@ def mkdir(path):
         return False
 
 # 对文件进行预处理，分成资料来源，数据来源，来源三种情况
-def preprocess(path, file):
+def preprocess(path):
     '''
     在截取图片之前对数据进行预处理
     :param path:文件路径, pdf文件
@@ -83,11 +83,11 @@ def preprocess(path, file):
                 
             doc.close()
             # print(materialsource)
-            print(len(materialsource))
+            # print(len(materialsource))
             # print(datasource)
-            print(len(datasource))
+            # print(len(datasource))
             # print(source)
-            print(len(source))
+            # print(len(source))
             # print("______________________________________")
             if not flag:
                 shutil.copy(os.path.join(path, file), os.path.join(mkpath4, file))
@@ -107,3 +107,4 @@ def preprocess(path, file):
 
 path = "E:/项目/试运行/201808/需求4/处理完成/测试"
 # file = ""
+preprocess(path)
