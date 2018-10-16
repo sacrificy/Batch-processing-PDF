@@ -52,4 +52,3 @@ if __name__ == '__main__':
     file_path="D:/PDF/行业深度研究/"
     out_path="D:/PDF/Cracked/"
     Crack(file_path,out_path)
-    print()
