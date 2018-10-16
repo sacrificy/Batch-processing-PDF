@@ -17,18 +17,26 @@ def catalog_extract(file_name):
     else:
         search_pages = page_count
     keyword = '.......'
-    keyword1 = r'(^[图表]+\s*[表]*.*?)(\.{2,})(\s*\d+)'
+    keyword1 = r'(^[图表]+\s*[表]*\s*\d+.*?)(\.{2,})(\s*\d+)'
+    num = 0
+    flag = 0
     for i in range(search_pages):
         page = doc.loadPage(i)
         page_text = page.getText()
         # print(page_text)
         if keyword in page_text:
+            num=1
             pattern = re.compile(keyword1,re.M)
             temp_list = pattern.findall(page_text)
             result.extend(temp_list)
+            if len(temp_list):
+                if int(temp_list[0][2]) <= i+1:
+                    flag=1
         else:
+            if num == 1:
+                num = i
             continue
-    return result
+    return result,num,flag
 
 # 参数需要上一个函数处理完之后的目录列表
 def catalog_list_grouping(list):
@@ -55,11 +63,12 @@ def catalog_list_grouping(list):
 
 
 if __name__ == '__main__':
-    file_name = 'D:/444.pdf'
-    lists = catalog_extract(file_name)
-    for x in lists:
-        print(x[0],x[2])
+    file_name = 'D:/666.pdf'
+    lists,first_page,flag = catalog_extract(file_name)
+    # for x in lists:
+    #     print(x[0],x[2])
     dis = catalog_list_grouping(lists)
+    # print(dis)
     # print(dis)
     # for i in range(len(list)):
     #     print('list序号', i, 'list内容：', list[i])

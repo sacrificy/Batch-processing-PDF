@@ -5,7 +5,7 @@ from itertools import groupby
 import re
 import os
 
-def image_extract(file_path,out_path,fig_name,file_type):
+def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
     doc=fitz.open(file_path)
     # page=doc.loadPage(15)
     # page_count=doc.pageCount
@@ -14,11 +14,14 @@ def image_extract(file_path,out_path,fig_name,file_type):
     if not os.path.exists(out_path):
         os.makedirs(out_path)
     Source_type=["来源","资料来源","数据来源"]
+    Offset=1
+    if flag == 1:
+        Offset=-first_page+1
     for page_num,fig_list in fig_name.items():
         # print(page_num,fig_list)
         name_figrects=[]
-        page=doc.loadPage(int(page_num)-1)
-        page1=doc.loadPage(int(page_num))
+        page=doc.loadPage(int(page_num)-Offset)
+        page1=doc.loadPage(int(page_num)-Offset+1)
         page_ = page.rect  # 页面大小
         page_length = page_.x1  # 页面长
         page_width = page_.y1  # 页面宽
@@ -204,6 +207,14 @@ if __name__ == "__main__":
     for pdf in pdf_files:
         pdf_path=os.path.join(file_path,pdf)
         file_type=1
-        name_list = catalog_extract(pdf_path)
+        name_list,first_page,flag = catalog_extract(pdf_path)
         fig_name = catalog_list_grouping(name_list)
-        image_extract(pdf_path,out_path,fig_name,file_type)
+        image_extract(pdf_path,out_path,fig_name,file_type,first_page,flag)
+
+    # file_type=1
+    # name_list,first_page,flag = catalog_extract('D:/666.pdf')
+    # fig_name = catalog_list_grouping(name_list)
+    # print(fig_name)
+    # image_extract('D:/666.pdf',out_path,fig_name,file_type,first_page,flag)
+
+    
