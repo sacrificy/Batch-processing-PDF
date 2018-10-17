@@ -4,15 +4,17 @@ import operator
 from itertools import groupby
 import re
 import os
+import shutil
 
 def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
-    doc=fitz.open(file_path)
     # page=doc.loadPage(15)
     # page_count=doc.pageCount
     # print(page.getText())
     out_path=os.path.join(out_path,os.path.basename(file_path))
     if not os.path.exists(out_path):
         os.makedirs(out_path)
+    shutil.copy(file_path,out_path)
+    doc=fitz.open(file_path)
     Source_type=["来源","资料来源","数据来源"]
     Offset=1
     if flag == 1:
@@ -26,6 +28,7 @@ def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
         page_length = page_.x1  # 页面长
         page_width = page_.y1  # 页面宽
         source_rects=[x.round() for x in page.searchFor(Source_type[file_type])]
+        # print(source_rects)
         source_rects_1=[x.round() for x in page1.searchFor(Source_type[file_type])]
         for fig in fig_list:
             fig_rect=search_fig(page,fig)
@@ -38,6 +41,7 @@ def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
             name_figrect_sourcerect_row=group_name_figrect_sourcerects(name_figrect_sourcerects)
             name_rects=make_rect(name_figrect_sourcerect_row,page_length,page_width)
             extract_fig(page,name_rects,out_path)
+    doc.close()
         # print(page_num,name_figrect_sourcerects)
         
         # extract_fig(fig_sources,page_length,page_width)
@@ -54,25 +58,30 @@ def search_fig(page,fig):
     a=0
     if not len(fig_rect):#根据图表+数字匹配
         a=1
-        fig_num_r = r'(图\s*表|表|图)\s*\d+'
+        # print(fig)
+        fig_num_r = r'(图\s*表|表|图)(\s*\d+)'
         pattern = re.compile(fig_num_r)
-        fig_num=pattern.match(fig).group(0)
-        fig_rect=page.searchFor(fig_num)
-        if not len(fig_rect):#根据图表+数字去掉空格匹配
-            a=2
-            # front = r'([图表]+\s*[图表]*\d+)(\s*[：.:]?\s*)(.+)'
-            fig_num1=re.sub('\s','',fig_num)
-            fig_rect=page.searchFor(fig_num1)
+        match=pattern.search(fig)
+        if match:
+            fig_num=match.group()
+            fig_rect=page.searchFor(fig_num)
+            if not len(fig_rect):#根据图表+数字去掉空格匹配
+                a=2
+                # front = r'([图表]+\s*[图表]*\d+)(\s*[：.:]?\s*)(.+)'
+                # print(fig_num)
+                fig_num1=re.sub('\s','',fig_num)
+                fig_rect=page.searchFor(fig_num1)
     if not len(fig_rect):#根据图表名的一部份匹配
         a=3
         name_r=r'[\u4e00-\u9fa5]{3,}'
         pattern1 = re.compile(name_r)
         name=pattern1.findall(fig)
-        if not len(name):
+        if len(name):
             name_=name[0]
             for x in name:
                 if len(name_)<len(x):
                     name_=x
+            print(name_)
             fig_rect=page.searchFor(name_)
         
         
@@ -146,21 +155,29 @@ def extra_rest_fig(page,page1,source_rects_1,rest_name_figrect,page_length,page_
 def group_name_figrect_sourcerects(name_figrect_sourcerects):
     # print(name_figrect_sourcerects)
     name_figrect_sourcerects=sorted(name_figrect_sourcerects,key=take_y0_x0)
-
+    # print('---------------------')
+    # for name_figrect_sourcerect in name_figrect_sourcerects:
+    #     print(name_figrect_sourcerect[0],name_figrect_sourcerect[1],name_figrect_sourcerect[2])
+    # print(name_figrect_sourcerects)
     name_figrect_sourcerect_row=[[]]
     length = len(name_figrect_sourcerects)  # 图表数
     for i in range(length):  # 将图表按行分组
         if i < (length - 1):
-            if name_figrect_sourcerects[i][1].y0 == name_figrect_sourcerects[i+1][1].y0:
+            if abs(name_figrect_sourcerects[i][1].y0-name_figrect_sourcerects[i+1][1].y0)<3:
+                # print(abs(name_figrect_sourcerects[i][1].y0-name_figrect_sourcerects[i+1][1].y0))
                 name_figrect_sourcerect_row[-1].append(name_figrect_sourcerects[i])
             else:
                 name_figrect_sourcerect_row[-1].append(name_figrect_sourcerects[i])
                 name_figrect_sourcerect_row.append([])
     name_figrect_sourcerect_row[-1].append(name_figrect_sourcerects[i])
+    name_figrect_sourcerect_row1=[]
+    for row in name_figrect_sourcerect_row:
+        name_figrect_sourcerect_row1.append(sorted(row,key=take_x0))
 
-    # print(name_figrect_sourcerects)
+
     # print(name_figrect_sourcerect_row)
-    return name_figrect_sourcerect_row
+    # print(name_figrect_sourcerect_row1)
+    return name_figrect_sourcerect_row1
     
 
 def extract_fig(page,name_rects,out_path):
@@ -211,10 +228,11 @@ if __name__ == "__main__":
         fig_name = catalog_list_grouping(name_list)
         image_extract(pdf_path,out_path,fig_name,file_type,first_page,flag)
 
+
     # file_type=1
-    # name_list,first_page,flag = catalog_extract('D:/666.pdf')
+    # name_list,first_page,flag = catalog_extract('D:/20180801-中银国际证券-大众MEB平台深度报告：大众MEB平台即将来袭，中国零部件迎历史新机遇.pdf')
     # fig_name = catalog_list_grouping(name_list)
-    # print(fig_name)
-    # image_extract('D:/666.pdf',out_path,fig_name,file_type,first_page,flag)
+    # # print(fig_name)
+    # image_extract('D:/20180801-中银国际证券-大众MEB平台深度报告：大众MEB平台即将来袭，中国零部件迎历史新机遇.pdf',out_path,fig_name,file_type,first_page,flag)
 
     
