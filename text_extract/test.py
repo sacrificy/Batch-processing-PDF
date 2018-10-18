@@ -5,35 +5,45 @@ from itertools import groupby
 import re
 import os
 import shutil
-
 def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
     # page=doc.loadPage(15)
-    # page_count=doc.pageCount
-    # print(page.getText())
-    out_path=os.path.join(out_path,os.path.basename(file_path))
+    # print(page.getText( ))
+    fail_path=os.path.join(out_path,'失败')
+    if not os.path.exists(out_path):
+        os.makedirs(out_path)
+    if not os.path.exists(fail_path):
+        os.makedirs(fail_path)
+    out_path=os.path.join(out_path,os.path.splitext(os.path.basename(file_path))[0])
     if not os.path.exists(out_path):
         os.makedirs(out_path)
     shutil.copy(file_path,out_path)
     doc=fitz.open(file_path)
+    page_count=doc.pageCount
     Source_type=["来源","资料来源","数据来源"]
     Offset=1
+    fail=0
     if flag == 1:
         Offset=-first_page+1
     for page_num,fig_list in fig_name.items():
         # print(page_num,fig_list)
         name_figrects=[]
         page=doc.loadPage(int(page_num)-Offset)
-        page1=doc.loadPage(int(page_num)-Offset+1)
+        source_rects=[x.round() for x in page.searchFor(Source_type[file_type])]
+        if int(page_num)-Offset+1 > page_count-1:
+            source_rects_1=[]
+        else:
+            page1=doc.loadPage(int(page_num)-Offset+1)
+            source_rects_1=[x.round() for x in page1.searchFor(Source_type[file_type])]
         page_ = page.rect  # 页面大小
         page_length = page_.x1  # 页面长
         page_width = page_.y1  # 页面宽
-        source_rects=[x.round() for x in page.searchFor(Source_type[file_type])]
         # print(source_rects)
-        source_rects_1=[x.round() for x in page1.searchFor(Source_type[file_type])]
         for fig in fig_list:
-            fig_rect=search_fig(page,fig)
+            fig_rect,fail=search_fig(page,fig,fail)
             name_figrect=[fig,fig_rect[0]]
             name_figrects.append(name_figrect)
+        if fail>3:
+            break
         name_figrect_sourcerects,rest_name_figrect=match_fig_source(name_figrects,source_rects,page_length,page_width)
         if len(rest_name_figrect):
             extra_rest_fig(page,page1,source_rects_1,rest_name_figrect,page_length,page_width,out_path)
@@ -42,6 +52,9 @@ def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
             name_rects=make_rect(name_figrect_sourcerect_row,page_length,page_width)
             extract_fig(page,name_rects,out_path)
     doc.close()
+    if fail>3:
+        shutil.move(file_path,fail_path)
+        shutil.move(out_path,fail_path)
         # print(page_num,name_figrect_sourcerects)
         
         # extract_fig(fig_sources,page_length,page_width)
@@ -53,7 +66,7 @@ def image_extract(file_path,out_path,fig_name,file_type,first_page,flag):
         #     print('页数',page_num,'分组',len(name_figrect_sourcerect_row))
         # break
 
-def search_fig(page,fig):
+def search_fig(page,fig,fail):
     fig_rect=page.searchFor(fig[0:10])#直接根据目录匹配
     a=0
     if not len(fig_rect):#根据图表+数字匹配
@@ -73,6 +86,7 @@ def search_fig(page,fig):
                 fig_rect=page.searchFor(fig_num1)
     if not len(fig_rect):#根据图表名的一部份匹配
         a=3
+        fail=fail+1
         name_r=r'[\u4e00-\u9fa5]{3,}'
         pattern1 = re.compile(name_r)
         name=pattern1.findall(fig)
@@ -87,11 +101,12 @@ def search_fig(page,fig):
         
     if not len(fig_rect):#搜索不到截取一整页
         a=4
+        fail=fail+1
         fig_rect=[fitz.Rect(-1,-1,-1,-1)]
     print(a,fig,len(fig_rect))
     fig_rect=[x.round() for x in fig_rect]
     # print(fig,fig_rect)
-    return fig_rect
+    return fig_rect,fail
 
 
 def match_fig_source(name_figrects,source_rects,page_length,page_width):
@@ -222,6 +237,7 @@ if __name__ == "__main__":
     out_path="D:/pic/"
     pdf_files = [name for name in os.listdir(file_path) if name.endswith('.pdf')]
     for pdf in pdf_files:
+        print(pdf)
         pdf_path=os.path.join(file_path,pdf)
         file_type=1
         name_list,first_page,flag = catalog_extract(pdf_path)
@@ -230,9 +246,9 @@ if __name__ == "__main__":
 
 
     # file_type=1
-    # name_list,first_page,flag = catalog_extract('D:/20180801-中银国际证券-大众MEB平台深度报告：大众MEB平台即将来袭，中国零部件迎历史新机遇.pdf')
+    # name_list,first_page,flag = catalog_extract('D:/222.pdf')
     # fig_name = catalog_list_grouping(name_list)
     # # print(fig_name)
-    # image_extract('D:/20180801-中银国际证券-大众MEB平台深度报告：大众MEB平台即将来袭，中国零部件迎历史新机遇.pdf',out_path,fig_name,file_type,first_page,flag)
+    # image_extract('D:/222.pdf',out_path,fig_name,file_type,first_page,flag)
 
     
